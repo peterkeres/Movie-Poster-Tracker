@@ -44,7 +44,8 @@ class Command:
         movie_list = self.movies.get_unwatched_movies()
         pick = randint(0, len(movie_list) - 1)
 
-        print(movie_list[pick])
+        # print(movie_list[pick])
+        Display.display_pick(movie_list[pick])
 
     """
     Allows the sort method to be based on the movie title

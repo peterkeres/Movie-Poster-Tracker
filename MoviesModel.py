@@ -1,4 +1,5 @@
 import csv
+import Settings
 
 """
 Movies Model Class:
@@ -12,7 +13,7 @@ class MoviesModel:
     """
 
     def __init__(self):
-        self.file_path = 'test_movie_list.csv'
+        self.file_path = Settings.file_path
 
     """
     Grabs all the movie records from the database text file

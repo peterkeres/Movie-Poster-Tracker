@@ -1,4 +1,8 @@
 from prettytable import PrettyTable
+from progress.spinner import PixelSpinner
+import time
+
+
 
 """
 Display Class:
@@ -6,6 +10,17 @@ Display Class:
 """
 
 class Display:
+
+    """
+    Displays the output of a movie pick
+    """
+    def display_pick(pick):
+        spinner = PixelSpinner('Finding a movie! ')
+        for i in range(10):
+            time.sleep(.3)
+            spinner.next()
+
+        print(f'\nGet ready to watch! {pick[1]}')
 
     """
     Displays a table output for whatever action is entered

@@ -1,7 +1,14 @@
 import Settings
 import csv
 
+"""
+FileMaker.py:
+    only thing this file does is create the start database file based on the settings in Settings.py
+"""
 
+'''
+Creates the database file
+'''
 def create_database():
     columns = Settings.column_names
     for reviewer in Settings.reviewers:
