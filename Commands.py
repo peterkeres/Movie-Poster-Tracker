@@ -11,10 +11,9 @@ COMMAND CLASS:
 
 class Command:
     """
-    the default constructor
+    The default constructor
     Str Command: The command entered at the command line
     """
-
     def __init__(self, command):
         self.command = command
         self.movies = MoviesModel()
@@ -23,8 +22,6 @@ class Command:
     """
     Figures out what command was entered and executes that method
     """
-
-    # todo check is enter command upper case breakes this
     def __run(self):
 
         if self.command.action == 'pick':
@@ -38,19 +35,15 @@ class Command:
     The pick Command:
     Picks a random movie that is not watched and displays it
     """
-
-    # todo push out to the display file
     def __pick(self):
         movie_list = self.movies.get_unwatched_movies()
         pick = randint(0, len(movie_list) - 1)
 
-        # print(movie_list[pick])
         Display.display_pick(movie_list[pick])
 
     """
     Allows the sort method to be based on the movie title
     """
-
     @staticmethod
     def __takeName(movie_list):
         return movie_list[1]
@@ -58,7 +51,6 @@ class Command:
     """
     Allows the sort method to be based on lowest rating
     """
-
     # todo test this!
     @staticmethod
     def __worst(movie_list):
@@ -67,7 +59,7 @@ class Command:
         for index, section in enumerate(movie_list):
             if index >= 4:
                 tmp += int(section)
-        # return int(movie_list[5]) + int(movie_list[4])
+        #return int(movie_list[5]) + int(movie_list[4])
         return tmp
 
     """

@@ -1,8 +1,8 @@
 Spot,Movie,Director,Watched,Peter,Elle,jackson,david
 1,The ShawShank Redemption,Frank Darabont,-,-,-,-,-
-2,The Dark Knight,Christopher Nolan,-,-,-,-,-
-3,City of God,F Meirelles K Lund,-,-,-,-,-
-4,Pulp Fiction,Quentin Tarntino,-,-,-,-,-
+2,The Dark Knight,Christopher Nolan,X,2,3,4,4
+3,City of God,F Meirelles K Lund,X,1,2,1,1
+4,Pulp Fiction,Quentin Tarntino,X,5,5,5,1
 5,Amelie,Jean Pierre Jeunet,-,-,-,-,-
 6,12 Angery Men,Sidney Lumet,-,-,-,-,-
 7,Blade Runnder,Ridley Scott,-,-,-,-,-
@@ -45,7 +45,7 @@ Spot,Movie,Director,Watched,Peter,Elle,jackson,david
 44,Back to the Future,Robert Zemeckis,-,-,-,-,-
 45,Forrest Gump,Robert Zemeckis,-,-,-,-,-
 46,The Silence of the Lambs,Jonathan Demme,-,-,-,-,-
-47,The Shining,Stanley Kubrick,-,-,-,-,-
+47,The Shining,Stanley Kubrick,X,1,1,1,1
 48,Alien,Ridley Scott,-,-,-,-,-
 49,Memento,Christopher Nolan,-,-,-,-,-
 50,Se7en,David Fincher,-,-,-,-,-

@@ -8,6 +8,12 @@ unreviewed_symbol = '-'
 watched_symbol = 'X'
 unwatched_symbol = '-'
 
+rating_point = "*"
+rating_missing = "-"
+
+watched_emoji = "\u2705"
+unwatched_emoji = "\u274c"
+
 movies = [
     [1, 'The ShawShank Redemption', "Frank Darabont"],
     [2, 'The Dark Knight', 'Christopher Nolan'],

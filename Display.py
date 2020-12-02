@@ -1,20 +1,21 @@
 from prettytable import PrettyTable
 from progress.spinner import PixelSpinner
 import time
-
-
+import Settings
 
 """
 Display Class:
     Handles all output for the program
 """
 
-class Display:
 
+class Display:
     """
     Displays the output of a movie pick
     """
+
     def display_pick(pick):
+        # Note: this does noting really, commit out if you dont want wait for the loading bar
         spinner = PixelSpinner('Finding a movie! ')
         for i in range(10):
             time.sleep(.3)
@@ -25,37 +26,37 @@ class Display:
     """
     Displays a table output for whatever action is entered
     """
+
     def display_table(movie_list):
-        t = PrettyTable()
+        table = PrettyTable()
+        table.field_names = Settings.column_names + Settings.reviewers
 
-        t.field_names = ["spot", "movie", "director", "watched", "peter", "elle"]
-
-        for index, movie in enumerate(movie_list):
+        for movie in movie_list:
             watched = ""
-            rating_peter = ""
-            rating_elle = ""
+            rating = ""
+            row = [movie[0], movie[1], movie[2]]
 
-            if movie[3] == "X":
-                watched = "\u2705"
+            # filles the watched column
+            if movie[3] == Settings.watched_symbol:
+                watched = Settings.watched_emoji
             else:
-                watched = "\u274c"
+                watched = Settings.unwatched_emoji
 
-            if movie[4] == "-":
-                pass
-            else:
-                for index in range(0, int(movie[4])):
-                    rating_peter += "* "
-                for index in range(0, (5 - int(movie[4]))):
-                    rating_peter += "- "
+            row.append(watched)
 
-            if movie[5] == "-":
-                pass
-            else:
-                for index in range(0, int(movie[5])):
-                    rating_elle += "* "
-                for index in range(0, (5 - int(movie[5]))):
-                    rating_elle += "- "
+            # fills out each revier's column
+            for reviewer in range(4, len(movie)):
+                if reviewer == Settings.unwatched_symbol:
+                    pass
+                else:
+                    for index in range(0, int(movie[reviewer])):
+                        rating += Settings.rating_point + " "
+                    for index in range(0, (5 - int(movie[reviewer]))):
+                        rating += Settings.rating_missing + " "
 
-            t.add_row([movie[0], movie[1], movie[2], watched, rating_peter, rating_elle])
+                row.append(rating)
+                rating = ""
 
-        print(t)
+            table.add_row(row)
+
+        print(table)
