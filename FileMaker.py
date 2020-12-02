@@ -9,7 +9,10 @@ FileMaker.py:
 '''
 Creates the database file
 '''
+
+
 def create_database():
+
     columns = Settings.column_names
     for reviewer in Settings.reviewers:
         columns.append(reviewer)

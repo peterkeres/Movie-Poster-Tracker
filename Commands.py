@@ -51,7 +51,6 @@ class Command:
     """
     Allows the sort method to be based on lowest rating
     """
-    # todo test this!
     @staticmethod
     def __worst(movie_list):
         tmp = 0
@@ -59,14 +58,13 @@ class Command:
         for index, section in enumerate(movie_list):
             if index >= 4:
                 tmp += int(section)
-        #return int(movie_list[5]) + int(movie_list[4])
+
         return tmp
 
     """
     The List Command:
     Lists movies based on what optional augment is entered
     """
-
     def __list(self):
 
         # Displays all movies, watched and unwatched in alphabetical order
@@ -117,24 +115,20 @@ class Command:
             for reviewer in Settings.reviewers:
                 if section.lower() == reviewer.lower():
                     if (parameter.split('=')[1].strip()).isnumeric():
-                        print(section)
                         reviewer_scores[reviewer.lower()] = int(parameter.split('=')[1].strip())
                     else:
                         missing_scores.append(reviewer)
-                        print("ERROR!!!")
 
         if len(reviewer_scores) == len(Settings.reviewers):
-            print('all good,move on')
-            print(reviewer_scores)
-        else:
-            print("missing the scores of", end=" ")
-            for person in missing_scores:
-                print(person.capitalize(), end=", "),
+            result = self.movies.set_watched(movie, reviewer_scores)
 
-        # for section in Settings.reviewers:
-        #     print(self.command.__str__())
-        #
-        # if self.movies.set_watched(movie, self.command.peter, self.command.elle):
-        #     print(f"{movie} updated!")
-        # else:
-        #     print(f"Movie: \"{movie}\" Could not be found ;(")
+            if result:
+                Display.display_updated_record(result)
+            else:
+                Display.error_missing_movie(movie)
+        else:
+            missing = []
+            for person in missing_scores:
+                missing.append(person)
+
+            Display.error_score_missing(missing)

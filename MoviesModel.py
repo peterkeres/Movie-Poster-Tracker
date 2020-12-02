@@ -75,16 +75,15 @@ class MoviesModel:
     Also sets the rating on the movie
     
     Str Movie: the movie you want to set watched status on
-    Int RateP: The rating for peter
-    Int RateE: The rating for elle
+    Dictionary Ratings: a dictionary of each rating scores with the key being the reviewer's name and value being score
     
     Return: Bool If the watched status was set on the movie record
     """
 
-    def set_watched(self, movie, rateP, rateE):
+    def set_watched(self, movie, ratings):
 
         all_movies = self.get_all_movies()
-        all_movies.insert(0, ["spot", "movie", "director", "watched", "peter", "elle"])
+        all_movies.insert(0, Settings.column_names + Settings.reviewers)
         found = False
 
         search = movie.lower()
@@ -94,15 +93,27 @@ class MoviesModel:
             cur_movie = movie[1].lower()
 
             if cur_movie == search:
-                found = True
-                all_movies[index][3] = "X"
-                all_movies[index][4] = rateP
-                all_movies[index][5] = rateE
+                all_movies[index][3] = Settings.watched_symbol
 
+                for slot, reviewer in enumerate(Settings.reviewers):
+                    all_movies[index][slot + 4] = ratings[reviewer.lower()]
+                found = all_movies[index]
         if found:
             with open(self.file_path, mode='w') as csv_file:
                 movie_writer = csv.writer(csv_file)
 
                 movie_writer.writerows(all_movies)
+
+        return found
+
+    def find_movie(self, movie):
+        all_movies = self.get_all_movies()
+
+        found = False
+
+        for curMovie in all_movies:
+
+            if curMovie[1] == movie:
+                found = curMovie
 
         return found

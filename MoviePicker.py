@@ -104,7 +104,7 @@ Checks to see if the database file has be created yet
 
 
 def file_check():
-    if not os.path.exists("test_movie_list.csv"):
+    if not os.path.exists(Settings.file_path):
         FileMaker.create_database()
 
 

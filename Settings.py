@@ -2,7 +2,7 @@ file_path = "testing.csv"
 
 column_names = ["Spot", "Movie", "Director", "Watched"]
 
-reviewers = ['peter', 'elle', 'JACKSON', 'david']
+reviewers = ['peter', 'elle', 'JACKSON']
 unreviewed_symbol = '-'
 
 watched_symbol = 'X'
