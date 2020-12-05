@@ -64,7 +64,7 @@ Generally speaking, there is 3 commands to the app and some initial setting valu
 this is only setting that you *need* to set. Its the names of the reviewers you want to keep track of the movie rating for.
 
 ```python
-# Settings.py
+# UserSettings.py
 
     reviewers = ['person 1', 'person 2']
 ```
@@ -80,7 +80,7 @@ So there are some other settings you can change.
  - emoji used for watched value
 
 ```python
-# Settings.py
+# UserSettings.py
 
     file_path = "movie_database.csv"
 
@@ -156,6 +156,18 @@ Displays the version number
 
 ## Contributing
 Open an issue to talk about what on you want to change and then do your pull request.
+
+Make sure to add the UserSettings.py file to your list of untracked changes. This way everyone's user settings don't conflict on the repo. Use the following command:
+
+```bash
+  $ git update-index --assume-unchanged UserSettings.py
+```
+
+If you need to add it back for whatever reason:
+
+```bash
+  $ git update-index --no-assume-unchanged UserSettings.py
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
