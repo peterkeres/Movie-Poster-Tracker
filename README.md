@@ -46,6 +46,8 @@ or
 ```
 
 ### Progress
+>*v1.5*
+
 Another small package that just shows a little loading animation while your pick is being retrieved
 
 [Here](https://pypi.org/project/progress/) if you hate the command line
@@ -54,8 +56,6 @@ or
 ```bash
     $ pip install progress
 ```
-
-*v1.5*
 
 ## Usage
 Generally speaking, there is 3 commands to the app and some initial setting values you have to set **BEFORE** you run the program
