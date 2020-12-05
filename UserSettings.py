@@ -4,12 +4,12 @@ UserSettings.py
     Here are the settings a user can change
 """
 
-reviewers = ['person 1', 'person 2']
+user_reviewers = ['Person 1', 'Person 2']
 
-file_path = "movie_database.csv"
+user_file_path = "movie_database.csv"
 
-rating_point = "*"
-rating_missing = "-"
+user_rating_point = "*"
+user_rating_missing = "-"
 
-watched_emoji = "\u2705"
-unwatched_emoji = "\u274c"
+user_watched_emoji = "\u2705"
+user_unwatched_emoji = "\u274c"

@@ -7,20 +7,20 @@ Settings.py:
 IF you are looking to change settings, like reviweres, Please go to the UserSettings.py file to make your changes
 """
 
-reviewers = UserSettings.reviewers
+reviewers = UserSettings.user_reviewers
 
-file_path = UserSettings.file_path
+file_path = UserSettings.user_file_path
 
 column_names = ["Spot", "Movie", "Director", "Watched"]
 
 watched_symbol = 'X'
 unwatched_symbol = '-'
 
-rating_point = UserSettings.rating_point
-rating_missing = UserSettings.rating_missing
+rating_point = UserSettings.user_rating_point
+rating_missing = UserSettings.user_rating_missing
 
-watched_emoji = UserSettings.watched_emoji
-unwatched_emoji = UserSettings.unwatched_emoji
+watched_emoji = UserSettings.user_watched_emoji
+unwatched_emoji = UserSettings.user_unwatched_emoji
 
 movies = [
     [1, 'The ShawShank Redemption', "Frank Darabont"],
