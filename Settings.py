@@ -1,26 +1,26 @@
+import UserSettings
+
 """
 Settings.py:
     This file just values that are used in other parts of the program
 
-Odds are you are here to add in new 'reviewers'. to do so, in the reviewers list simply add in the name of the reviewer
-
-Other settings can be changed as you wish but do so at your own risk
+IF you are looking to change settings, like reviweres, Please go to the UserSettings.py file to make your changes
 """
 
-reviewers = ['person 1', 'person 2']
+reviewers = UserSettings.reviewers
 
-file_path = "movie_database.csv"
+file_path = UserSettings.file_path
 
 column_names = ["Spot", "Movie", "Director", "Watched"]
 
 watched_symbol = 'X'
 unwatched_symbol = '-'
 
-rating_point = "*"
-rating_missing = "-"
+rating_point = UserSettings.rating_point
+rating_missing = UserSettings.rating_missing
 
-watched_emoji = "\u2705"
-unwatched_emoji = "\u274c"
+watched_emoji = UserSettings.watched_emoji
+unwatched_emoji = UserSettings.unwatched_emoji
 
 movies = [
     [1, 'The ShawShank Redemption', "Frank Darabont"],
