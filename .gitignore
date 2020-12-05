@@ -1,0 +1,8 @@
+# Py enviroment and IDE files
+/venv/
+/.idea/
+/__pycache__/
+.DS_Store
+
+# Database File
+*.csv
