@@ -34,6 +34,8 @@ or
 *Note this has not been tested on python v2.x so try at your own risk. but do feel free to leave a issue* :smirk: 
 
 ### Prettytable
+> *v2.0.0*
+
 Just a simple package that displays out the results from commands in a nice little table
 
 [Here](https://pypi.org/project/prettytable/) if you hate the command line
@@ -42,8 +44,6 @@ or
 ```bash
     $ pip install prettytable
 ```
-
-*v2.0.0*
 
 ### Progress
 Another small package that just shows a little loading animation while your pick is being retrieved
