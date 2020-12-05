@@ -6,3 +6,6 @@
 
 # Database File
 *.csv
+
+# User Settings
+UserSettings.py
