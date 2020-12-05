@@ -14,6 +14,7 @@ class Display:
     Displays the output of a movie pick
     list[] pick: the movie record of the movie that has been picked to watch
     """
+
     @staticmethod
     def display_pick(pick):
         # Note: this does noting really, commit out if you dont want wait for the loading bar
@@ -28,6 +29,7 @@ class Display:
     Displays the output for when a movie is set to watched
     list[] record: the movie record of the movie that has been set to watched status
     """
+
     @staticmethod
     def display_updated_record(record):
         print(f"\"{record[1]}\" has been updated!!!")
@@ -36,13 +38,13 @@ class Display:
     Displays a table output for whatever action is entered
     list[] movie_list: lists of movie records to be displayed
     """
+
     @staticmethod
     def display_table(movie_list):
         table = PrettyTable()
         table.field_names = Settings.column_names + Settings.reviewers
 
         for movie in movie_list:
-            watched = ""
             rating = ""
             row = [movie[0], movie[1], movie[2]]
 
@@ -75,6 +77,7 @@ class Display:
     Displays an error message for when scores are missing during the watched command
     list[] missing_scores: a list of who's scores are missing
     """
+
     @staticmethod
     def error_score_missing(missing_scores):
         print('ERROR!!!! Missing review scores for the following:')
@@ -84,6 +87,7 @@ class Display:
     Displays an error message when a movie could not be found
     Str movie: the string of the movie that the USER entered
     """
+
     @staticmethod
-    def error_missing_movie(moive):
-        print(f'ERROR!!!! Could not find movie \"{moive}\", Check spelling')
+    def error_missing_movie(movie):
+        print(f'ERROR!!!! Could not find movie \"{movie}\", Check spelling')

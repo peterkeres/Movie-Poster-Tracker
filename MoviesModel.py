@@ -11,15 +11,14 @@ class MoviesModel:
     """
     The default constructor
     """
-
     def __init__(self):
         self.file_path = Settings.file_path
+
 
     """
     Grabs all the movie records from the database text file
     Return: List[]
     """
-
     def get_all_movies(self):
         with open(self.file_path) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
@@ -40,7 +39,6 @@ class MoviesModel:
     Gabs all unwatched movie records from the database text file
     Return: List[]
     """
-
     def get_unwatched_movies(self):
 
         all_movies = self.get_all_movies()
@@ -57,7 +55,6 @@ class MoviesModel:
     Grabs all watched movie records from the database text file
     Return: List[]
     """
-
     def get_watched_movies(self):
 
         all_movies = self.get_all_movies()
@@ -79,7 +76,6 @@ class MoviesModel:
     
     Return: Bool If the watched status was set on the movie record
     """
-
     def set_watched(self, movie, ratings):
 
         all_movies = self.get_all_movies()
@@ -106,6 +102,12 @@ class MoviesModel:
 
         return found
 
+    """
+    Finds a move record within the database
+    Str moive: The title of the move to be found
+    
+    return: The whole record of the movie found, False otherwise
+    """
     def find_movie(self, movie):
         all_movies = self.get_all_movies()
 

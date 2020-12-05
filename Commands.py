@@ -101,8 +101,6 @@ class Command:
     The Watched Command:
     Sets a movies status to 'watched' and updates the movies rating
     """
-
-    # todo double check all works, seems too. then send over to the datbase file
     def __watched(self):
 
         movie = " ".join(self.command.movie)
@@ -110,6 +108,7 @@ class Command:
         reviewer_scores = {}
         missing_scores = []
 
+        # goes though the list of parameters to find the review scores
         for parameter in all_parameters:
             section = parameter.split('=')[0].strip()
             for reviewer in Settings.reviewers:
@@ -119,6 +118,7 @@ class Command:
                     else:
                         missing_scores.append(reviewer)
 
+        # checks to see if all reviewer scores are accounted for
         if len(reviewer_scores) == len(Settings.reviewers):
             result = self.movies.set_watched(movie, reviewer_scores)
 

@@ -5,11 +5,10 @@ import FileMaker
 
 from Commands import Command
 
+
 """
 Sets up and runs the IO of the program
 """
-
-
 def grab_command():
     usage = '''   MoviePicker.py pick [-h] [--version] 
           MoviePicker.py list [-a | -b | -w | -s] [-h] [--version]
@@ -101,17 +100,14 @@ def grab_command():
 """
 Checks to see if the database file has be created yet
 """
-
-
 def file_check():
     if not os.path.exists(Settings.file_path):
         FileMaker.create_database()
 
 
 """
-Creates the databse file based on fields in the settings file
+Creates the database file based on fields in the settings file
 """
-
 if __name__ == '__main__':
     file_check()
     grab_command()

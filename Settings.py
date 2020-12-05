@@ -1,9 +1,17 @@
-file_path = "testing.csv"
+"""
+Settings.py:
+    This file just values that are used in other parts of the program
+
+Odds are you are here to add in new 'reviewers'. to do so, in the reviewers list simply add in the name of the reviewer
+
+Other settings can be changed as you wish but do so at your own risk
+"""
+
+reviewers = ['person 1', 'person 2']
+
+file_path = "movie_database.csv"
 
 column_names = ["Spot", "Movie", "Director", "Watched"]
-
-reviewers = ['peter', 'elle', 'JACKSON']
-unreviewed_symbol = '-'
 
 watched_symbol = 'X'
 unwatched_symbol = '-'
